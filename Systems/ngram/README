@@ -1,0 +1,51 @@
+# Ngrams
+
+
+
+This was an assingment in which we had to get our program to raad X amount of shakespeare lines and keep track of how many times an ngram appears.
+an Ngram is a string that is split by some punctuation. we had to then order the ngrams by count either in increasing or decreasing order.
+
+This assignment required us to implement NgramFast.C/.h along with NgramSTL.C/.h.
+The constraint being that we could not use the standard library for our NgramFast implementation.
+
+We had to implement both programs such that both ran in less than a second with no memory errors.
+
+The runtimes vary (~ less than a milisec) but both ngramfast && ngramstl are free of memory errors as shown by valgrind, and both programs run according to the constraints
+The beauty is mostly in NgramFast.C in that class I make a hashtable from scratch to store ngam nodes, which hold a string and count.
+- ngramfast will be given strings by main.c, it'll take each string, check if it has been hashed then either create a new node and hash it or increase its - count
+- After all words have been fed to the program we iterate through each node of our hashtable to create an array of ngram pointers
+- at first our pointer array is unordered, but we order it by increasing count using RADIX SORT (we go based off of count)
+
+
+NgramSTL follows a similar routine (if it aint broke dont fix it)
+- instead of making a struct for ngrams we use an unordered map that takes <string, int>
+- after we pass all the strings and put them into the map, we put each entry in the map into an array of <String, int> pairs
+- we then preform the same RADIX SORT algorithim we employed previously and its all good!
+
+
+# READ ME
+
+Please note that the program DOES NOT RUN (as of 12/28/23).
+This program was uploaded as it was given, in the current state it needs to communicate with a grading server to, well... grade.
+I in the future may adapt it to run offline.
+
+
+
+Note that ngramfast is built from NgramFast.C/NgramFast.h and ngramstl
+is built from NgramSTL.C/NgramSTL.h 
+
+FLAGS FOR RUNNING
+usage: executable ( -g | ( -i | -d | -i -d ) [ -pi | -pd | -pis | -pds ] [ -n <n> ] [ -m ] [ -t ] <filename>)
+ *        -g : grade solution (no other options provided)
+ *        BUILD OPTIONS (at least one is required)
+ *        -i : build increasing list
+ *        -d : build decreasing list
+ *        PRINT OPTIONS (at most one is provided):
+ *           -pi : print increasing list
+ *           -pd : print decreasing list
+ *           -pis : print increasing list of solution
+ *           -pds : print decreasing list of solution
+ *        OPTIONAL:
+ *           -n <n> : set the ngram size to n (default 2)
+ *           -m     : use valgrind to check for memory errors
+ *           -t     : determine the amount of time it takes to build the increasing and/or decreasing list
