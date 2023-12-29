@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" stylesheets="styles/darkMode.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reminder.GUI.SecondSceneController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.4844097995545657" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+      <AnchorPane id="Content" fx:id="InteractionPane" minHeight="-1.0" minWidth="-1.0" styleClass="anchor-pane">
+        <children>
+                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="556.0" prefWidth="439.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane prefHeight="273.0" prefWidth="443.0" styleClass="anchor-pane">
+                           <children>
+                              <Label alignment="CENTER" layoutX="90.0" layoutY="28.0" prefHeight="27.0" prefWidth="252.0" style="&#10;" text="Click on an event to create a reminder" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="28.0">
+                                 <font>
+                                    <Font size="14.0" fx:id="x13" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="listView" layoutX="39.0" layoutY="58.0" minHeight="-Infinity" prefHeight="159.0" prefWidth="352.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="58.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </ListView>
+                      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="50.0" style="&#10;" text="View" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <font>
+                            <Font size="18.0" fx:id="x1" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="40.0" layoutY="223.0" prefHeight="35.0" prefWidth="288.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="38.0">
+                                 <children>
+                                    <Button fx:id="printOgEvents" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#printOgClicked" prefHeight="25.0" prefWidth="113.0" text="Show events" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="printReminderEvents" alignment="CENTER" disable="true" mnemonicParsing="false" onMouseClicked="#printRemClicked" prefHeight="25.0" prefWidth="172.0" text="Remove all but Reminders" translateX="68.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane prefHeight="274.0" prefWidth="472.0" styleClass="anchor-pane">
+                           <children>
+                              <ListView fx:id="reminderView" disable="true" layoutX="36.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="159.0" prefWidth="400.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="58.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </ListView>
+                              <Label fx:id="reminderViewLabel" alignment="CENTER" layoutX="64.0" layoutY="23.0" prefHeight="27.0" prefWidth="344.0" style="&#10;" text="Enter days in advanced you want to be reminded " textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="23.0">
+                                 <font>
+                                    <Font size="14.0" fx:id="x131" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="39.0" layoutY="226.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
+                                 <children>
+                                    <Button fx:id="createReminderButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onMouseClicked="#createReminderClicked" prefHeight="26.0" prefWidth="133.0" text="Create Reminders!" HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="dupeReminderError" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="188.0" style="&#10;" text="Duplicate Reminder!" textAlignment="CENTER" textFill="RED" visible="false" wrapText="false" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="14.0" fx:id="x132" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+        </children>
+      </AnchorPane>
+        <AnchorPane fx:id="PrintPane" styleClass="anchor-pane">
+          <children>
+                  <SplitPane dividerPositions="0.48194945848375453" orientation="VERTICAL" prefHeight="556.0" prefWidth="460.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="anchor-pane">
+                           <children>
+                              <TextArea fx:id="DetailsPrintArea" editable="false" maxHeight="-Infinity" prefHeight="159.0" prefWidth="233.0" text="----------- Events List ------------------" wrapText="true" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="58.0" />
+                        <Label alignment="CENTER" font="$x1" prefHeight="35.0" prefWidth="80.0" style="&#10;" text="Details" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="anchor-pane">
+                           <children>
+                              <TextArea fx:id="reminderDetsArea" editable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="159.0" prefWidth="223.0" text="----------- Reminder List --------------" wrapText="true" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="58.0" />
+                              <HBox layoutX="39.0" layoutY="32.0" prefHeight="39.0" prefWidth="380.0" AnchorPane.bottomAnchor="217.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="28.0">
+                                 <children>
+                                  <Button fx:id="printAllEvents" alignment="CENTER" defaultButton="true" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#printAClicked" prefHeight="25.0" prefWidth="141.0" text="Add reminders to .ics" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="exportICSButton" alignment="CENTER" defaultButton="true" disable="true" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#exportIcsButton" prefHeight="25.0" prefWidth="135.0" text="Export .ics" translateX="103.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label font="$x3" maxWidth="-1.0" prefHeight="16.0" prefWidth="258.0" text="\@Kevin Portillo. Self-Proclaimed coding wizard. V1.0" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
