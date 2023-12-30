@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "main.C": "cpp"
+        "main.C": "cpp",
+        "NgramFast.C": "cpp",
+        "ConditionCodes.C": "cpp",
+        "PipeReg.C": "cpp",
+        "NgramSlow.C": "cpp",
+        "NgramSTL.C": "cpp"
     }
 }
