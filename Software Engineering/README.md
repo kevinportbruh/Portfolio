@@ -24,11 +24,13 @@ This was a short assignment but one I enjoyed to work on. This was for an assign
 I had some fun with this and created a Binary tree from scratch but this worked with a few twists. 
 
 -The Data Structure
+
 The tree is a family tree, where the root node is always a Person. Any left subtree of a Person node are all of the Pets that Person has. Any node to the right of a Person node must be the next Person in the family.
 
--The pattern
+-The Pattern
+
 The Iterator pattern was applied by using Depth First Search with pre-order traversal. The two iterators are dfsIterator which iterates through the ENTIRE tree, the second is petIterator, which also iterates through the tree with pre-ordered DFS but only considers the Pet Nodes as valid ones to visit.
 
 The Vistor pattern was applied in the PrintTreeVisitor & CombinedAgeVisitor classes. Both vistors accept both types of nodes; The Printing visitor prints information that is formatted for each type of node. Since we are using preorder DFS, when run using the dfsIterator, it prints the Person node then all of their pets before moving on to the next person. The CombinedAgeVistor adds the age of each node to a counter for display after the iterator is done.
 
-The program is fully functional with detailed comments that make it easy to follow al.ong. Try running it and follow the comments in demo.java. Run it in the terminal with ./gradlew run
+The program is fully functional with detailed comments that make it easy to follow along. Try running it and follow the comments in demo.java. Run it in the terminal with ./gradlew run
