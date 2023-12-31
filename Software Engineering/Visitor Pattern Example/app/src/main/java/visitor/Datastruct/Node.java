@@ -11,7 +11,7 @@ import visitor.visitor.*;
  */
 public class Node {
     private Node prev; // parent node
-    private Node rightNode; // sibling node
+    private Node rightNode; // sibling node 
     private Node leftNode; // child node
 
     //constructor

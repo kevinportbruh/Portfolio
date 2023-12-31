@@ -24,7 +24,7 @@ public class Demo {
     *       / \              /         \
     *   Grof   Yammei   Cloned grof     Good Kevin
     *    /                              /           \
-    *   King Jeff III                          Good grof      Evil Kevin       
+    *   King Jeff III                 Good grof      Evil Kevin       
     *                               
     *                                             
     */
