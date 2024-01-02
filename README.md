@@ -31,11 +31,13 @@
  "+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+" 
 ````
 A portfolio containing my best work so far!
-Most of the projects built here can be compiled/run using the provided makefile or a gradle run command.
-
-~NOTE: SOME PROJECTS MAY BE BROKEN DUE TO THEM BEING REQUIRED TO CONNECT TO THE APPSTATE SERVER.
+Most of the projects built here can be compiled/run using the provided makefile or a gradle run command. The collection of work here contains Academic Work and some personal projects.
 
 Projects have their own provided descriptions & input files if necessary, take a look a round to see why they call me the code wizard 🧙‍♂️🧙‍♂️🧙‍♂️
 
 Enjoy!
-(All work in this repo was done by me!)
+Kevin Portillo, Self-Proclaimed Code Wizard 🧙‍♂️.
+
+⚠️ PLEASE NOTE: SOME PROJECTS MAY BE BROKEN DUE TO THEM BEING REQUIRED TO CONNECT TO THE APPSTATE SERVER. ⚠️
+
+⚠️ This repo is still under construction, I am currently in the procces of cleaning up the code/README's and get things working offline ⚠️
